@@ -27,7 +27,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 05-05-2026 to 30-07-2026
 
-![Your profile picture](/images/avatar.jpg)
+![Your profile picture](/images/avatar.jpg?width=250px)
 
 ### Report Content
 
