@@ -26,10 +26,14 @@ for item in os.listdir(workshop_dir):
 
 # --- MAIN WORKSHOP INDEX ---
 main_en = """## Live-Service Game Backend Architecture on AWS
-### Step-by-Step Hands-On Implementation Guide
 
 ### Overview
 This workshop provides a complete, step-by-step hands-on implementation guide for building a serverless and Spot Instance backend architecture for live-service multiplayer games on AWS.
+
+* **Demo Web Link:** [http://fighting-game-assets-508768431157.s3-website-ap-southeast-1.amazonaws.com/](http://fighting-game-assets-508768431157.s3-website-ap-southeast-1.amazonaws.com/)
+* **Source Code Link:** [https://github.com/Nothingtoread/fighting-game/tree/main](https://github.com/Nothingtoread/fighting-game/tree/main)
+
+---
 
 ### Table of Contents
 
@@ -57,10 +61,14 @@ This workshop provides a complete, step-by-step hands-on implementation guide fo
 """
 
 main_vi = """## Xây dựng Kiến trúc Backend Game Live-Service trên AWS
-### Hướng dẫn Triển khai Chi tiết từng bước (Hands-On Lab)
 
 ### Tổng quan
 Bài lab thực hành (Workshop) này hướng dẫn chi tiết từng bước cách thiết lập và triển khai hệ thống Backend cho Game Live-Service trên đám mây AWS kết hợp kiến trúc Serverless và cụm máy chủ EC2 Spot Instance.
+
+* **Link web demo:** [http://fighting-game-assets-508768431157.s3-website-ap-southeast-1.amazonaws.com/](http://fighting-game-assets-508768431157.s3-website-ap-southeast-1.amazonaws.com/)
+* **Link source code:** [https://github.com/Nothingtoread/fighting-game/tree/main](https://github.com/Nothingtoread/fighting-game/tree/main)
+
+---
 
 ### Nội dung bài Lab
 
@@ -1029,4 +1037,4 @@ write_page(os.path.join(c562_dir, "_index.vi.md"), "Khởi tạo MatchAnalytic L
 ![Dữ liệu Event từ DynamoDB Stream](/images/5-Workshop/img_B/image40.png)
 """)
 
-print("Regenerated 5.x.y structure with alwaysopen: true!")
+print("Updated 5.x index files with Demo Web and Source Code links!")
