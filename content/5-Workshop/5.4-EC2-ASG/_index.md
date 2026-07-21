@@ -3,6 +3,7 @@ title: "EC2 Game Server & Auto Scaling Group Warm Pool"
 date: 2026-07-21
 weight: 4
 chapter: false
+alwaysopen: true
 pre: " <b> 5.4. </b> "
 ---
 

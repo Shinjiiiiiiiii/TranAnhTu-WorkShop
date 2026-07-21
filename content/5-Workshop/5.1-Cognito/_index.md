@@ -3,6 +3,7 @@ title: "User Authentication with Amazon Cognito"
 date: 2026-07-21
 weight: 1
 chapter: false
+alwaysopen: true
 pre: " <b> 5.1. </b> "
 ---
 

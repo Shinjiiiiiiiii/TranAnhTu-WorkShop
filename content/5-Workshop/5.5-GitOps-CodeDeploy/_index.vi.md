@@ -3,6 +3,7 @@ title: "Thiết lập Pipeline GitOps CI/CD & AWS CodeDeploy"
 date: 2026-07-21
 weight: 5
 chapter: false
+alwaysopen: true
 pre: " <b> 5.5. </b> "
 ---
 

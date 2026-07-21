@@ -3,14 +3,15 @@ import os, shutil
 base_dir = r"c:\Study\TranAnhTu-workshop-main"
 workshop_dir = os.path.join(base_dir, "content", "5-Workshop")
 
-# Helper function to write a page
-def write_page(file_path, title, weight, chapter_num, content):
+# Helper function to write a page with optional alwaysopen
+def write_page(file_path, title, weight, chapter_num, content, always_open=False):
+    always_open_str = "alwaysopen: true\n" if always_open else ""
     header = f"""---
 title: "{title}"
 date: 2026-07-21
 weight: {weight}
 chapter: false
-pre: " <b> {chapter_num}. </b> "
+{always_open_str}pre: " <b> {chapter_num}. </b> "
 ---
 
 """
@@ -22,8 +23,6 @@ for item in os.listdir(workshop_dir):
     item_path = os.path.join(workshop_dir, item)
     if os.path.isdir(item_path):
         shutil.rmtree(item_path)
-
-print("Cleared content/5-Workshop subdirectories.")
 
 # --- MAIN WORKSHOP INDEX ---
 main_en = """## Live-Service Game Backend Architecture on AWS
@@ -88,8 +87,8 @@ Bài lab thực hành (Workshop) này hướng dẫn chi tiết từng bước c
    - 5.6.2 Khởi tạo MatchAnalytic Lambda & Kiểm thử Log
 """
 
-write_page(os.path.join(workshop_dir, "_index.md"), "Workshop", 5, "5", main_en)
-write_page(os.path.join(workshop_dir, "_index.vi.md"), "Workshop", 5, "5", main_vi)
+write_page(os.path.join(workshop_dir, "_index.md"), "Workshop", 5, "5", main_en, always_open=True)
+write_page(os.path.join(workshop_dir, "_index.vi.md"), "Workshop", 5, "5", main_vi, always_open=True)
 
 
 # --- CHAPTER 5.1: COGNITO ---
@@ -106,7 +105,7 @@ In this chapter, you will configure **Amazon Cognito User Pools** and **Cognito 
 - [5.1.1 Create Cognito User Pool](5.1.1-create-user-pool/)
 - [5.1.2 Configure App Client & Identity Pool](5.1.2-configure-identity-pool/)
 - [5.1.3 Verify User Registration UI](5.1.3-test-user-registration/)
-""")
+""", always_open=True)
 
 write_page(os.path.join(c51_dir, "_index.vi.md"), "Xác thực người dùng với Amazon Cognito", 1, "5.1",
 """### Tổng quan
@@ -118,7 +117,7 @@ Trong chương này, bạn sẽ thực hành cấu hình **Amazon Cognito User P
 - [5.1.1 Tạo Cognito User Pool](5.1.1-create-user-pool/)
 - [5.1.2 Cấu hình App Client & Identity Pool](5.1.2-configure-identity-pool/)
 - [5.1.3 Kiểm thử Giao diện Đăng ký Người dùng](5.1.3-test-user-registration/)
-""")
+""", always_open=True)
 
 # 5.1.1
 c511_dir = os.path.join(c51_dir, "5.1.1-create-user-pool")
@@ -289,7 +288,7 @@ In this chapter, you will create two core **Amazon DynamoDB** tables: `Matchmaki
 ### Sub-modules
 - [5.2.1 Create MatchmakingQueue Table](5.2.1-create-queue-table/)
 - [5.2.2 Create ActiveMatches Table](5.2.2-create-active-matches-table/)
-""")
+""", always_open=True)
 
 write_page(os.path.join(c52_dir, "_index.vi.md"), "Cơ sở dữ liệu DynamoDB: MatchmakingQueue & ActiveMatches", 2, "5.2",
 """### Tổng quan
@@ -300,7 +299,7 @@ Trong chương này, bạn sẽ tiến hành khởi tạo hai bảng **Amazon Dy
 ### Các bài học nhỏ
 - [5.2.1 Tạo Bảng MatchmakingQueue](5.2.1-create-queue-table/)
 - [5.2.2 Tạo Bảng ActiveMatches](5.2.2-create-active-matches-table/)
-""")
+""", always_open=True)
 
 # 5.2.1
 c521_dir = os.path.join(c52_dir, "5.2.1-create-queue-table")
@@ -412,7 +411,7 @@ In this chapter, you will build the **FightingGameMatchmaker** AWS Lambda functi
 ### Sub-modules
 - [5.3.1 Build Matchmaker Lambda Function](5.3.1-create-matchmaker-lambda/)
 - [5.3.2 Deploy REST API & Cognito Authorizer](5.3.2-create-api-gateway/)
-""")
+""", always_open=True)
 
 write_page(os.path.join(c53_dir, "_index.vi.md"), "Matchmaker Lambda & API Gateway REST API", 3, "5.3",
 """### Tổng quan
@@ -423,7 +422,7 @@ Trong chương này, bạn sẽ triển khai hàm AWS Lambda **FightingGameMatch
 ### Các bài học nhỏ
 - [5.3.1 Xây dựng Matchmaker Lambda Function](5.3.1-create-matchmaker-lambda/)
 - [5.3.2 Triển khai REST API & Cognito Authorizer](5.3.2-create-api-gateway/)
-""")
+""", always_open=True)
 
 # 5.3.1
 c531_dir = os.path.join(c53_dir, "5.3.1-create-matchmaker-lambda")
@@ -604,7 +603,7 @@ In this chapter, you will launch the baseline **EC2 Game Server**, bake a custom
 - [5.4.1 Launch EC2 Base & Setup Node.js Server](5.4.1-setup-ec2-game-server/)
 - [5.4.2 Bake AMI & Create Launch Template](5.4.2-bake-ami-launch-template/)
 - [5.4.3 Configure ASG Warm Pool & S3 Bucket](5.4.3-configure-asg-warmpool/)
-""")
+""", always_open=True)
 
 write_page(os.path.join(c54_dir, "_index.vi.md"), "Cấu hình EC2 Game Server & ASG Warm Pool", 4, "5.4",
 """### Tổng quan
@@ -616,7 +615,7 @@ Trong chương này, bạn sẽ khởi tạo máy chủ game mẫu trên **Amazo
 - [5.4.1 Khởi tạo EC2 Game Server Node.js](5.4.1-setup-ec2-game-server/)
 - [5.4.2 Đóng gói AMI & Tạo Launch Template](5.4.2-bake-ami-launch-template/)
 - [5.4.3 Cấu hình ASG Warm Pool & S3 Bucket](5.4.3-configure-asg-warmpool/)
-""")
+""", always_open=True)
 
 # 5.4.1
 c541_dir = os.path.join(c54_dir, "5.4.1-setup-ec2-game-server")
@@ -780,7 +779,7 @@ In this chapter, you will integrate **GitHub Actions OIDC** for passwordless aut
 - [5.5.1 Setup GitHub OIDC Provider & IAM Roles](5.5.1-setup-github-oidc/)
 - [5.5.2 Install CodeDeploy Agent on Ubuntu 24.04](5.5.2-install-codedeploy-agent/)
 - [5.5.3 Create CodeDeploy App & Execute Pipeline](5.5.3-execute-gitops-pipeline/)
-""")
+""", always_open=True)
 
 write_page(os.path.join(c55_dir, "_index.vi.md"), "Thiết lập Pipeline GitOps CI/CD & AWS CodeDeploy", 5, "5.5",
 """### Tổng quan
@@ -792,7 +791,7 @@ Trong chương này, bạn sẽ cấu hình **GitHub Actions OIDC** để xác t
 - [5.5.1 Cấu hình GitHub OIDC Provider & IAM Roles](5.5.1-setup-github-oidc/)
 - [5.5.2 Cài đặt CodeDeploy Agent trên Ubuntu 24.04](5.5.2-install-codedeploy-agent/)
 - [5.5.3 Tạo CodeDeploy App & Triển khai Pipeline](5.5.3-execute-gitops-pipeline/)
-""")
+""", always_open=True)
 
 # 5.5.1
 c551_dir = os.path.join(c55_dir, "5.5.1-setup-github-oidc")
@@ -935,7 +934,7 @@ In this chapter, you will enable **DynamoDB Streams** on the `ActiveMatches` tab
 ### Sub-modules
 - [5.6.1 Enable DynamoDB Streams & IAM Roles](5.6.1-enable-dynamodb-streams/)
 - [5.6.2 Create MatchAnalytic Lambda & Verify Logs](5.6.2-create-analytics-lambda/)
-""")
+""", always_open=True)
 
 write_page(os.path.join(c56_dir, "_index.vi.md"), "Xử lý dữ liệu bất đồng bộ sau trận đấu với DynamoDB Streams", 6, "5.6",
 """### Tổng quan
@@ -946,7 +945,7 @@ Trong chương này, bạn sẽ bật **DynamoDB Streams** trên bảng `ActiveM
 ### Các bài học nhỏ
 - [5.6.1 Kích hoạt DynamoDB Streams & IAM Roles](5.6.1-enable-dynamodb-streams/)
 - [5.6.2 Khởi tạo MatchAnalytic Lambda & Kiểm thử Log](5.6.2-create-analytics-lambda/)
-""")
+""", always_open=True)
 
 # 5.6.1
 c561_dir = os.path.join(c56_dir, "5.6.1-enable-dynamodb-streams")
@@ -1030,4 +1029,4 @@ write_page(os.path.join(c562_dir, "_index.vi.md"), "Khởi tạo MatchAnalytic L
 ![Dữ liệu Event từ DynamoDB Stream](/images/5-Workshop/img_B/image40.png)
 """)
 
-print("Nested 5.x.y Workshop structure generated successfully!")
+print("Regenerated 5.x.y structure with alwaysopen: true!")

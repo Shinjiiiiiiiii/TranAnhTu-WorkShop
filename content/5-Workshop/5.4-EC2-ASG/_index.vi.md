@@ -3,6 +3,7 @@ title: "Cấu hình EC2 Game Server & ASG Warm Pool"
 date: 2026-07-21
 weight: 4
 chapter: false
+alwaysopen: true
 pre: " <b> 5.4. </b> "
 ---
 

@@ -3,6 +3,7 @@ title: "Matchmaker Lambda & API Gateway REST API"
 date: 2026-07-21
 weight: 3
 chapter: false
+alwaysopen: true
 pre: " <b> 5.3. </b> "
 ---
 
