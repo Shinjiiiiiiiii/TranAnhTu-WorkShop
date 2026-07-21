@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 5.3. </b> "
 ---
 
-# Matchmaker Lambda & API Gateway REST API
-
 ### Overview
 In this module, you will build the **FightingGameMatchmaker** AWS Lambda function to process player queueing (`POST /join`) and match checks (`GET /check`), and expose these endpoints via **Amazon API Gateway** secured by Cognito Authorizer.
 

@@ -3,7 +3,6 @@ import os
 base_dir = r"c:\Study\TranAnhTu-workshop-main"
 workshop_dir = os.path.join(base_dir, "content", "5-Workshop")
 
-# Helper function to write EN and VI index files for a subfolder
 def write_subfolder(folder, title_en, title_vi, weight, content_en, content_vi):
     target_path = os.path.join(workshop_dir, folder)
     os.makedirs(target_path, exist_ok=True)
@@ -32,10 +31,68 @@ pre: " <b> 5.{weight}. </b> "
     with open(os.path.join(target_path, "_index.vi.md"), "w", encoding="utf-8") as f:
         f.write(header_vi + content_vi)
 
-# Chapter 5.1 - Cognito
-c1_en = """# User Authentication with Amazon Cognito
+# Main index EN
+main_index_en = """---
+title: "Workshop"
+date: 2026-07-21
+weight: 5
+chapter: false
+pre: " <b> 5. </b> "
+---
+
+## Live-Service Game Backend Architecture on AWS
+### Step-by-Step Hands-On Implementation Guide
 
 ### Overview
+This workshop provides a complete, step-by-step hands-on implementation guide for building a serverless and Spot Instance backend architecture for live-service multiplayer games on AWS.
+
+You will learn how to configure authentication with Amazon Cognito, build a serverless matchmaking queue with DynamoDB and AWS Lambda, expose REST APIs using Amazon API Gateway, manage an EC2 Spot fleet for live game servers, automate deployments with GitHub Actions and AWS CodeDeploy, and process post-match analytics asynchronously with DynamoDB Streams.
+
+### Table of Contents
+
+1. [User Authentication with Amazon Cognito](5.1-Cognito/)
+2. [Database Setup: DynamoDB Matchmaking Queue & Active Matches](5.2-DynamoDB/)
+3. [Matchmaker Lambda & API Gateway REST API](5.3-Lambda-API/)
+4. [EC2 Game Server & Auto Scaling Group Warm Pool](5.4-EC2-ASG/)
+5. [GitOps CI/CD Pipeline & AWS CodeDeploy](5.5-GitOps-CodeDeploy/)
+6. [Asynchronous Post-Match Processing with DynamoDB Streams](5.6-Analytics-Stream/)
+"""
+
+# Main index VI
+main_index_vi = """---
+title: "Workshop"
+date: 2026-07-21
+weight: 5
+chapter: false
+pre: " <b> 5. </b> "
+---
+
+## Xây dựng Kiến trúc Backend Game Live-Service trên AWS
+### Hướng dẫn Triển khai Chi tiết từng bước (Hands-On Lab)
+
+### Tổng quan
+Bài lab thực hành (Workshop) này hướng dẫn chi tiết từng bước cách thiết lập và triển khai hệ thống Backend cho Game Live-Service trên đám mây AWS kết hợp kiến trúc Serverless và cụm máy chủ EC2 Spot Instance.
+
+Bạn sẽ thực hành cấu hình xác thực người chơi với Amazon Cognito, xây dựng hàng đợi ghép trận với DynamoDB và AWS Lambda, công khai REST API qua Amazon API Gateway, quản lý cụm máy chủ EC2 Spot cho các phiên chơi game, tự động hóa quy trình CI/CD qua GitHub Actions & AWS CodeDeploy, và xử lý dữ liệu sau trận đấu bất đồng bộ với DynamoDB Streams.
+
+### Nội dung bài Lab
+
+1. [Xác thực người dùng với Amazon Cognito](5.1-Cognito/)
+2. [Khởi tạo Cơ sở dữ liệu DynamoDB: MatchmakingQueue & ActiveMatches](5.2-DynamoDB/)
+3. [Xây dựng Matchmaker Lambda & API Gateway REST API](5.3-Lambda-API/)
+4. [Cấu hình EC2 Game Server & Auto Scaling Group Warm Pool](5.4-EC2-ASG/)
+5. [Thiết lập Pipeline GitOps CI/CD & AWS CodeDeploy](5.5-GitOps-CodeDeploy/)
+6. [Xử lý dữ liệu bất đồng bộ sau trận đấu với DynamoDB Streams](5.6-Analytics-Stream/)
+"""
+
+with open(os.path.join(workshop_dir, "_index.md"), "w", encoding="utf-8") as f:
+    f.write(main_index_en)
+
+with open(os.path.join(workshop_dir, "_index.vi.md"), "w", encoding="utf-8") as f:
+    f.write(main_index_vi)
+
+# Chapter 5.1 - Cognito
+c1_en = """### Overview
 In this module, you will configure **Amazon Cognito User Pools** and **Cognito Identity Pools** to handle user sign-up, sign-in, and temporary IAM credential generation for downloading game assets.
 
 ---
@@ -107,9 +164,7 @@ In this module, you will configure **Amazon Cognito User Pools** and **Cognito I
 ![User Registration UI](/images/5-Workshop/img_A/image99.png)
 """
 
-c1_vi = """# Xác thực người dùng với Amazon Cognito
-
-### Tổng quan
+c1_vi = """### Tổng quan
 Trong phần này, bạn sẽ thực hành cấu hình **Amazon Cognito User Pools** và **Cognito Identity Pools** để xử lý đăng ký, đăng nhập và cấp quyền IAM ngắn hạn cho client tải tài nguyên game.
 
 ---
@@ -184,9 +239,7 @@ Trong phần này, bạn sẽ thực hành cấu hình **Amazon Cognito User Poo
 write_subfolder("5.1-Cognito", "User Authentication with Amazon Cognito", "Xác thực người dùng với Amazon Cognito", 1, c1_en, c1_vi)
 
 # Chapter 5.2 - DynamoDB
-c2_en = """# Database Setup: DynamoDB Matchmaking Queue & Active Matches
-
-### Overview
+c2_en = """### Overview
 In this module, you will create two core **Amazon DynamoDB** tables: `MatchmakingQueue` (for pending players) and `ActiveMatches` (for active match sessions).
 
 ---
@@ -233,9 +286,7 @@ In this module, you will create two core **Amazon DynamoDB** tables: `Matchmakin
 ![Active DynamoDB Tables](/images/5-Workshop/img_A/image29.png)
 """
 
-c2_vi = """# Cơ sở dữ liệu DynamoDB: MatchmakingQueue & ActiveMatches
-
-### Tổng quan
+c2_vi = """### Tổng quan
 Trong phần này, bạn sẽ tiến hành khởi tạo hai bảng **Amazon DynamoDB** cốt lõi: `MatchmakingQueue` (hàng chờ người chơi) và `ActiveMatches` (lưu phiên trận đấu đang diễn ra).
 
 ---
@@ -285,9 +336,7 @@ Trong phần này, bạn sẽ tiến hành khởi tạo hai bảng **Amazon Dyna
 write_subfolder("5.2-DynamoDB", "Database Setup: DynamoDB Matchmaking Queue & Active Matches", "Cơ sở dữ liệu DynamoDB: MatchmakingQueue & ActiveMatches", 2, c2_en, c2_vi)
 
 # Chapter 5.3 - Lambda-API
-c3_en = """# Matchmaker Lambda & API Gateway REST API
-
-### Overview
+c3_en = """### Overview
 In this module, you will build the **FightingGameMatchmaker** AWS Lambda function to process player queueing (`POST /join`) and match checks (`GET /check`), and expose these endpoints via **Amazon API Gateway** secured by Cognito Authorizer.
 
 ---
@@ -368,9 +417,7 @@ In this module, you will build the **FightingGameMatchmaker** AWS Lambda functio
 ![Deploy API](/images/5-Workshop/img_A/image84.png)
 """
 
-c3_vi = """# Matchmaker Lambda & API Gateway REST API
-
-### Tổng quan
+c3_vi = """### Tổng quan
 Trong phần này, bạn sẽ triển khai hàm AWS Lambda **FightingGameMatchmaker** để xử lý yêu cầu tham gia hàng chờ (`POST /join`) và kiểm tra trạng thái trận đấu (`GET /check`), sau đó công khai dịch vụ qua **Amazon API Gateway** tích hợp bảo mật Cognito Authorizer.
 
 ---
@@ -454,9 +501,7 @@ Trong phần này, bạn sẽ triển khai hàm AWS Lambda **FightingGameMatchma
 write_subfolder("5.3-Lambda-API", "Matchmaker Lambda & API Gateway REST API", "Matchmaker Lambda & API Gateway REST API", 3, c3_en, c3_vi)
 
 # Chapter 5.4 - EC2-ASG
-c4_en = """# EC2 Game Server & Auto Scaling Group Warm Pool
-
-### Overview
+c4_en = """### Overview
 In this module, you will launch the baseline **EC2 Game Server**, bake a customized **AMI**, create a **Launch Template**, configure an **Auto Scaling Group (ASG) Warm Pool**, and set up the **Amazon S3 Asset Bucket**.
 
 ---
@@ -522,9 +567,7 @@ In this module, you will launch the baseline **EC2 Game Server**, bake a customi
 ![Attach Instance Role](/images/5-Workshop/img_B/image18.png)
 """
 
-c4_vi = """# Cấu hình EC2 Game Server & ASG Warm Pool
-
-### Tổng quan
+c4_vi = """### Tổng quan
 Trong phần này, bạn sẽ khởi tạo máy chủ game mẫu trên **Amazon EC2**, đóng gói **AMI**, thiết lập **Launch Template**, cấu hình **Auto Scaling Group (ASG) Warm Pool** và khởi tạo **S3 Asset Bucket**.
 
 ---
@@ -593,9 +636,7 @@ Trong phần này, bạn sẽ khởi tạo máy chủ game mẫu trên **Amazon 
 write_subfolder("5.4-EC2-ASG", "EC2 Game Server & Auto Scaling Group Warm Pool", "Cấu hình EC2 Game Server & ASG Warm Pool", 4, c4_en, c4_vi)
 
 # Chapter 5.5 - GitOps-CodeDeploy
-c5_en = """# GitOps CI/CD Pipeline & AWS CodeDeploy
-
-### Overview
+c5_en = """### Overview
 In this module, you will integrate **GitHub Actions OIDC** for passwordless authentication, install and patch the **AWS CodeDeploy Agent** on Ubuntu 24.04 LTS, configure CodeDeploy applications, and execute automated zero-downtime deployments.
 
 ---
@@ -654,9 +695,7 @@ sudo systemctl start codedeploy-agent
 ![Successful CodeDeploy Job](/images/5-Workshop/img_B/image31.png)
 """
 
-c5_vi = """# Thiết lập Pipeline GitOps CI/CD & AWS CodeDeploy
-
-### Tổng quan
+c5_vi = """### Tổng quan
 Trong phần này, bạn sẽ cấu hình **GitHub Actions OIDC** để xác thực không dùng access key tĩnh, cài đặt và patch **AWS CodeDeploy Agent** trên Ubuntu 24.04 LTS, cấu hình CodeDeploy Application và thực thi quy trình triển khai tự động không gây gián đoạn.
 
 ---
@@ -718,9 +757,7 @@ sudo systemctl start codedeploy-agent
 write_subfolder("5.5-GitOps-CodeDeploy", "GitOps CI/CD Pipeline & AWS CodeDeploy", "Thiết lập Pipeline GitOps CI/CD & AWS CodeDeploy", 5, c5_en, c5_vi)
 
 # Chapter 5.6 - Analytics-Stream
-c6_en = """# Asynchronous Post-Match Processing with DynamoDB Streams
-
-### Overview
+c6_en = """### Overview
 In this module, you will enable **DynamoDB Streams** on the `ActiveMatches` table, create the **MatchAnalyticLambda** function, and capture post-match events asynchronously to log analytics without affecting matchmaking latency.
 
 ---
@@ -760,9 +797,7 @@ In this module, you will enable **DynamoDB Streams** on the `ActiveMatches` tabl
 ![DynamoDB Stream Event Data](/images/5-Workshop/img_B/image40.png)
 """
 
-c6_vi = """# Xử lý dữ liệu bất đồng bộ sau trận đấu với DynamoDB Streams
-
-### Tổng quan
+c6_vi = """### Tổng quan
 Trong phần này, bạn sẽ bật **DynamoDB Streams** trên bảng `ActiveMatches`, khởi tạo hàm **MatchAnalyticLambda** và thu thập sự kiện kết thúc trận đấu bất đồng bộ để ghi log phân tích mà không gây ảnh hưởng tới độ trễ của hệ thống matchmaking.
 
 ---
@@ -804,4 +839,4 @@ Trong phần này, bạn sẽ bật **DynamoDB Streams** trên bảng `ActiveMat
 
 write_subfolder("5.6-Analytics-Stream", "Asynchronous Post-Match Processing with DynamoDB Streams", "Xử lý dữ liệu bất đồng bộ sau trận đấu với DynamoDB Streams", 6, c6_en, c6_vi)
 
-print("All 6 submodules generated successfully!")
+print("Updated create_all_workshop_files.py and generated clean files without duplicate H1 headers!")

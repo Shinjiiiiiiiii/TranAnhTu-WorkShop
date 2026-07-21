@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 5.4. </b> "
 ---
 
-# EC2 Game Server & Auto Scaling Group Warm Pool
-
 ### Overview
 In this module, you will launch the baseline **EC2 Game Server**, bake a customized **AMI**, create a **Launch Template**, configure an **Auto Scaling Group (ASG) Warm Pool**, and set up the **Amazon S3 Asset Bucket**.
 

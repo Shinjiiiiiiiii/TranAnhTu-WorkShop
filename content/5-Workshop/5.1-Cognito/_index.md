@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 5.1. </b> "
 ---
 
-# User Authentication with Amazon Cognito
-
 ### Overview
 In this module, you will configure **Amazon Cognito User Pools** and **Cognito Identity Pools** to handle user sign-up, sign-in, and temporary IAM credential generation for downloading game assets.
 

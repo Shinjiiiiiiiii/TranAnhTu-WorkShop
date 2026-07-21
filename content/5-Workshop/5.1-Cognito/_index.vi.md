@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 5.1. </b> "
 ---
 
-# Xác thực người dùng với Amazon Cognito
-
 ### Tổng quan
 Trong phần này, bạn sẽ thực hành cấu hình **Amazon Cognito User Pools** và **Cognito Identity Pools** để xử lý đăng ký, đăng nhập và cấp quyền IAM ngắn hạn cho client tải tài nguyên game.
 

@@ -1,27 +1,24 @@
 ---
 title: "Workshop"
-date: 2024-01-01
+date: 2026-07-21
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
-# Secure Hybrid Access to S3 using VPC Endpoints
 
-#### Overview
+## Live-Service Game Backend Architecture on AWS
+### Step-by-Step Hands-On Implementation Guide
 
-**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
+### Overview
+This workshop provides a complete, step-by-step hands-on implementation guide for building a serverless and Spot Instance backend architecture for live-service multiplayer games on AWS.
 
-In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
+You will learn how to configure authentication with Amazon Cognito, build a serverless matchmaking queue with DynamoDB and AWS Lambda, expose REST APIs using Amazon API Gateway, manage an EC2 Spot fleet for live game servers, automate deployments with GitHub Actions and AWS CodeDeploy, and process post-match analytics asynchronously with DynamoDB Streams.
 
-You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
-+ **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
-+ **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
+### Table of Contents
 
-#### Content
-
-1. [Workshop overview](5.1-Workshop-overview)
-2. [Prerequiste](5.2-Prerequiste/)
-3. [Access S3 from VPC](5.3-S3-vpc/)
-4. [Access S3 from On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (Bonus)](5.5-Policy/)
-6. [Clean up](5.6-Cleanup/)
+1. [User Authentication with Amazon Cognito](5.1-Cognito/)
+2. [Database Setup: DynamoDB Matchmaking Queue & Active Matches](5.2-DynamoDB/)
+3. [Matchmaker Lambda & API Gateway REST API](5.3-Lambda-API/)
+4. [EC2 Game Server & Auto Scaling Group Warm Pool](5.4-EC2-ASG/)
+5. [GitOps CI/CD Pipeline & AWS CodeDeploy](5.5-GitOps-CodeDeploy/)
+6. [Asynchronous Post-Match Processing with DynamoDB Streams](5.6-Analytics-Stream/)

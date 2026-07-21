@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 5.2. </b> "
 ---
 
-# Cơ sở dữ liệu DynamoDB: MatchmakingQueue & ActiveMatches
-
 ### Tổng quan
 Trong phần này, bạn sẽ tiến hành khởi tạo hai bảng **Amazon DynamoDB** cốt lõi: `MatchmakingQueue` (hàng chờ người chơi) và `ActiveMatches` (lưu phiên trận đấu đang diễn ra).
 

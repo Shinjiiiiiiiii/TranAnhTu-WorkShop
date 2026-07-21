@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 5.4. </b> "
 ---
 
-# Cấu hình EC2 Game Server & ASG Warm Pool
-
 ### Tổng quan
 Trong phần này, bạn sẽ khởi tạo máy chủ game mẫu trên **Amazon EC2**, đóng gói **AMI**, thiết lập **Launch Template**, cấu hình **Auto Scaling Group (ASG) Warm Pool** và khởi tạo **S3 Asset Bucket**.
 

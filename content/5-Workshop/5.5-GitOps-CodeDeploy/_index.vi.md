@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 5.5. </b> "
 ---
 
-# Thiết lập Pipeline GitOps CI/CD & AWS CodeDeploy
-
 ### Tổng quan
 Trong phần này, bạn sẽ cấu hình **GitHub Actions OIDC** để xác thực không dùng access key tĩnh, cài đặt và patch **AWS CodeDeploy Agent** trên Ubuntu 24.04 LTS, cấu hình CodeDeploy Application và thực thi quy trình triển khai tự động không gây gián đoạn.
 

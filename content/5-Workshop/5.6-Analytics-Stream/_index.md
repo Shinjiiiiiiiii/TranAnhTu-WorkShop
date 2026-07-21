@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 5.6. </b> "
 ---
 
-# Asynchronous Post-Match Processing with DynamoDB Streams
-
 ### Overview
 In this module, you will enable **DynamoDB Streams** on the `ActiveMatches` table, create the **MatchAnalyticLambda** function, and capture post-match events asynchronously to log analytics without affecting matchmaking latency.
 

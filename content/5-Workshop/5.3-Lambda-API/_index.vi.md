@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 5.3. </b> "
 ---
 
-# Matchmaker Lambda & API Gateway REST API
-
 ### Tổng quan
 Trong phần này, bạn sẽ triển khai hàm AWS Lambda **FightingGameMatchmaker** để xử lý yêu cầu tham gia hàng chờ (`POST /join`) và kiểm tra trạng thái trận đấu (`GET /check`), sau đó công khai dịch vụ qua **Amazon API Gateway** tích hợp bảo mật Cognito Authorizer.
 

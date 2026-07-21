@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 5.2. </b> "
 ---
 
-# Database Setup: DynamoDB Matchmaking Queue & Active Matches
-
 ### Overview
 In this module, you will create two core **Amazon DynamoDB** tables: `MatchmakingQueue` (for pending players) and `ActiveMatches` (for active match sessions).
 

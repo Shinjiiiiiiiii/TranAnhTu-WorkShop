@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 5.5. </b> "
 ---
 
-# GitOps CI/CD Pipeline & AWS CodeDeploy
-
 ### Overview
 In this module, you will integrate **GitHub Actions OIDC** for passwordless authentication, install and patch the **AWS CodeDeploy Agent** on Ubuntu 24.04 LTS, configure CodeDeploy applications, and execute automated zero-downtime deployments.
 

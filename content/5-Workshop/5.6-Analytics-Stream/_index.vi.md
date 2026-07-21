@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 5.6. </b> "
 ---
 
-# Xử lý dữ liệu bất đồng bộ sau trận đấu với DynamoDB Streams
-
 ### Tổng quan
 Trong phần này, bạn sẽ bật **DynamoDB Streams** trên bảng `ActiveMatches`, khởi tạo hàm **MatchAnalyticLambda** và thu thập sự kiện kết thúc trận đấu bất đồng bộ để ghi log phân tích mà không gây ảnh hưởng tới độ trễ của hệ thống matchmaking.
 
