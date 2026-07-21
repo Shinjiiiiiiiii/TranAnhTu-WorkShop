@@ -16,6 +16,22 @@ var getUrlParameter = function getUrlParameter(sPageURL) {
 };
 
 jQuery(document).ready(function () {
+  // store this page in session
+  sessionStorage.setItem(jQuery("body").data("url"), 1);
+
+  // clean up any obsolete session storage keys from old template workshops
+  for (var k in sessionStorage) {
+    if (k && (k.indexOf('5.1-workshop-overview') !== -1 || k.indexOf('5.2-prerequiste') !== -1 || k.indexOf('5.3-s3-vpc') !== -1 || k.indexOf('5.4-s3-onprem') !== -1 || k.indexOf('5.5-policy') !== -1 || k.indexOf('5.6-cleanup') !== -1)) {
+      sessionStorage.removeItem(k);
+    }
+  }
+
+  // loop through the sessionStorage and see if something should be marked as visited
+  for (var url in sessionStorage) {
+    if (sessionStorage.getItem(url) == 1)
+      jQuery('[data-nav-id="' + url + '"]').addClass("visited");
+  }
+
   // Execute actions on images generated from Markdown pages
   var images = $("div#body-inner img").not(".inline");
   
