@@ -226,3 +226,11 @@ div.notices.info p {
   border-top: 30px solid #fd9827;
   background: #fff2db;
 }
+
+/* Ensure nested sub-menus (5.x.y) display when section (5.x) is active or parent */
+#sidebar ul.topics li.active > ul,
+#sidebar ul.topics li.parent > ul,
+#sidebar ul.topics li.active ul,
+#sidebar ul.topics li.parent ul {
+  display: block !important;
+}
