@@ -8,10 +8,14 @@ pre: " <b> 5. </b> "
 ---
 
 ## Xây dựng Kiến trúc Backend Game Live-Service trên AWS
-### Hướng dẫn Triển khai Chi tiết từng bước (Hands-On Lab)
 
 ### Tổng quan
 Bài lab thực hành (Workshop) này hướng dẫn chi tiết từng bước cách thiết lập và triển khai hệ thống Backend cho Game Live-Service trên đám mây AWS kết hợp kiến trúc Serverless và cụm máy chủ EC2 Spot Instance.
+
+* **Link web demo:** [http://fighting-game-assets-508768431157.s3-website-ap-southeast-1.amazonaws.com/](http://fighting-game-assets-508768431157.s3-website-ap-southeast-1.amazonaws.com/)
+* **Link source code:** [https://github.com/Nothingtoread/fighting-game/tree/main](https://github.com/Nothingtoread/fighting-game/tree/main)
+
+---
 
 ### Nội dung bài Lab
 

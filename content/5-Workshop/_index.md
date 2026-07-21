@@ -8,10 +8,14 @@ pre: " <b> 5. </b> "
 ---
 
 ## Live-Service Game Backend Architecture on AWS
-### Step-by-Step Hands-On Implementation Guide
 
 ### Overview
 This workshop provides a complete, step-by-step hands-on implementation guide for building a serverless and Spot Instance backend architecture for live-service multiplayer games on AWS.
+
+* **Demo Web Link:** [http://fighting-game-assets-508768431157.s3-website-ap-southeast-1.amazonaws.com/](http://fighting-game-assets-508768431157.s3-website-ap-southeast-1.amazonaws.com/)
+* **Source Code Link:** [https://github.com/Nothingtoread/fighting-game/tree/main](https://github.com/Nothingtoread/fighting-game/tree/main)
+
+---
 
 ### Table of Contents
 
