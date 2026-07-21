@@ -12,13 +12,26 @@ pre: " <b> 5. </b> "
 ### Tổng quan
 Bài lab thực hành (Workshop) này hướng dẫn chi tiết từng bước cách thiết lập và triển khai hệ thống Backend cho Game Live-Service trên đám mây AWS kết hợp kiến trúc Serverless và cụm máy chủ EC2 Spot Instance.
 
-Bạn sẽ thực hành cấu hình xác thực người chơi với Amazon Cognito, xây dựng hàng đợi ghép trận với DynamoDB và AWS Lambda, công khai REST API qua Amazon API Gateway, quản lý cụm máy chủ EC2 Spot cho các phiên chơi game, tự động hóa quy trình CI/CD qua GitHub Actions & AWS CodeDeploy, và xử lý dữ liệu sau trận đấu bất đồng bộ với DynamoDB Streams.
-
 ### Nội dung bài Lab
 
-1. [Xác thực người dùng với Amazon Cognito](5.1-Cognito/)
-2. [Khởi tạo Cơ sở dữ liệu DynamoDB: MatchmakingQueue & ActiveMatches](5.2-DynamoDB/)
-3. [Xây dựng Matchmaker Lambda & API Gateway REST API](5.3-Lambda-API/)
-4. [Cấu hình EC2 Game Server & Auto Scaling Group Warm Pool](5.4-EC2-ASG/)
-5. [Thiết lập Pipeline GitOps CI/CD & AWS CodeDeploy](5.5-GitOps-CodeDeploy/)
-6. [Xử lý dữ liệu bất đồng bộ sau trận đấu với DynamoDB Streams](5.6-Analytics-Stream/)
+1. [5.1 Xác thực người dùng với Amazon Cognito](5.1-cognito/)
+   - 5.1.1 Tạo Cognito User Pool
+   - 5.1.2 Cấu hình App Client & Identity Pool
+   - 5.1.3 Kiểm thử Giao diện Đăng ký Người dùng
+2. [5.2 Khởi tạo Cơ sở dữ liệu DynamoDB](5.2-dynamodb/)
+   - 5.2.1 Tạo Bảng MatchmakingQueue
+   - 5.2.2 Tạo Bảng ActiveMatches
+3. [5.3 Matchmaker Lambda & API Gateway REST API](5.3-lambda-api/)
+   - 5.3.1 Xây dựng Matchmaker Lambda Function
+   - 5.3.2 Triển khai REST API & Cognito Authorizer
+4. [5.4 Cấu hình EC2 Game Server & ASG Warm Pool](5.4-ec2-asg/)
+   - 5.4.1 Khởi tạo EC2 Game Server Node.js
+   - 5.4.2 Đóng gói AMI & Tạo Launch Template
+   - 5.4.3 Cấu hình ASG Warm Pool & S3 Bucket
+5. [5.5 Thiết lập Pipeline GitOps CI/CD & AWS CodeDeploy](5.5-gitops-codedeploy/)
+   - 5.5.1 Cấu hình GitHub OIDC Provider & IAM Roles
+   - 5.5.2 Cài đặt CodeDeploy Agent trên Ubuntu 24.04
+   - 5.5.3 Tạo CodeDeploy App & Triển khai Pipeline
+6. [5.6 Xử lý dữ liệu bất đồng bộ sau trận đấu](5.6-analytics-stream/)
+   - 5.6.1 Kích hoạt DynamoDB Streams & IAM Roles
+   - 5.6.2 Khởi tạo MatchAnalytic Lambda & Kiểm thử Log

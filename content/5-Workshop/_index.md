@@ -12,13 +12,26 @@ pre: " <b> 5. </b> "
 ### Overview
 This workshop provides a complete, step-by-step hands-on implementation guide for building a serverless and Spot Instance backend architecture for live-service multiplayer games on AWS.
 
-You will learn how to configure authentication with Amazon Cognito, build a serverless matchmaking queue with DynamoDB and AWS Lambda, expose REST APIs using Amazon API Gateway, manage an EC2 Spot fleet for live game servers, automate deployments with GitHub Actions and AWS CodeDeploy, and process post-match analytics asynchronously with DynamoDB Streams.
-
 ### Table of Contents
 
-1. [User Authentication with Amazon Cognito](5.1-Cognito/)
-2. [Database Setup: DynamoDB Matchmaking Queue & Active Matches](5.2-DynamoDB/)
-3. [Matchmaker Lambda & API Gateway REST API](5.3-Lambda-API/)
-4. [EC2 Game Server & Auto Scaling Group Warm Pool](5.4-EC2-ASG/)
-5. [GitOps CI/CD Pipeline & AWS CodeDeploy](5.5-GitOps-CodeDeploy/)
-6. [Asynchronous Post-Match Processing with DynamoDB Streams](5.6-Analytics-Stream/)
+1. [5.1 User Authentication with Amazon Cognito](5.1-cognito/)
+   - 5.1.1 Create Cognito User Pool
+   - 5.1.2 Configure App Client & Identity Pool
+   - 5.1.3 Verify User Registration UI
+2. [5.2 Database Setup: DynamoDB](5.2-dynamodb/)
+   - 5.2.1 Create MatchmakingQueue Table
+   - 5.2.2 Create ActiveMatches Table
+3. [5.3 Matchmaker Lambda & API Gateway REST API](5.3-lambda-api/)
+   - 5.3.1 Build Matchmaker Lambda Function
+   - 5.3.2 Deploy REST API & Cognito Authorizer
+4. [5.4 EC2 Game Server & Auto Scaling Group Warm Pool](5.4-ec2-asg/)
+   - 5.4.1 Launch EC2 Base & Setup Node.js Server
+   - 5.4.2 Bake AMI & Create Launch Template
+   - 5.4.3 Configure ASG Warm Pool & S3 Bucket
+5. [5.5 GitOps CI/CD Pipeline & AWS CodeDeploy](5.5-gitops-codedeploy/)
+   - 5.5.1 Setup GitHub OIDC Provider & IAM Roles
+   - 5.5.2 Install CodeDeploy Agent on Ubuntu 24.04
+   - 5.5.3 Create CodeDeploy App & Execute Pipeline
+6. [5.6 Asynchronous Post-Match Processing](5.6-analytics-stream/)
+   - 5.6.1 Enable DynamoDB Streams & IAM Roles
+   - 5.6.2 Create MatchAnalytic Lambda & Verify Logs
