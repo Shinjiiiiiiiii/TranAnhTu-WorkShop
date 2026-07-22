@@ -1,6 +1,6 @@
 ---
 title: "Event 2"
-date: 2025-06-27
+date: 2026-06-27
 weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
@@ -9,7 +9,7 @@ pre: " <b> 4.2. </b> "
 
 ### Event Information:
 * **Event Name:** AWS SageMaker Deep Dive (Highlighting features from re:Invent 2024)
-* **Date:** June 27, 2025
+* **Date:** June 27, 2026
 * **Location:** Hybrid (In-person & Virtual) at 26th Floor (and 36th Floor), Bitexco Financial Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City
 * **Organizer:** AWS (Amazon Web Services), broadcasted on AWS Study Group YouTube channel
 

@@ -19,7 +19,7 @@ During my internship, I participated in two technical events. Each one was a val
 
 ### [Event 2 - AWS SageMaker Deep Dive](4.2-Event2/)  
 
-&emsp;**Date & Time:** Friday, June 27, 2025  
+&emsp;**Date & Time:** Friday, June 27, 2026  
 
 &emsp;**Location:** 26th Floor (and 36th Floor), Bitexco Financial Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City  
 
