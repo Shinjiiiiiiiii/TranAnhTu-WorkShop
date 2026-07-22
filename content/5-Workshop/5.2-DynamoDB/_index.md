@@ -3,7 +3,6 @@ title: "Database Setup: DynamoDB Matchmaking Queue & Active Matches"
 date: 2026-07-21
 weight: 2
 chapter: false
-alwaysopen: true
 pre: " <b> 5.2. </b> "
 ---
 

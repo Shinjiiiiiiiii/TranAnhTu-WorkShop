@@ -3,7 +3,6 @@ title: "Asynchronous Post-Match Processing with DynamoDB Streams"
 date: 2026-07-21
 weight: 6
 chapter: false
-alwaysopen: true
 pre: " <b> 5.6. </b> "
 ---
 

@@ -5,7 +5,7 @@ workshop_dir = os.path.join(base_dir, "content", "5-Workshop")
 
 # Helper function to write a page with optional alwaysopen
 def write_page(file_path, title, weight, chapter_num, content, always_open=False):
-    always_open_str = "alwaysopen: true\n" if always_open else ""
+    always_open_str = ""
     header = f"""---
 title: "{title}"
 date: 2026-07-21

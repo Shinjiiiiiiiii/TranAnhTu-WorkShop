@@ -3,7 +3,6 @@ title: "Cơ sở dữ liệu DynamoDB: MatchmakingQueue & ActiveMatches"
 date: 2026-07-21
 weight: 2
 chapter: false
-alwaysopen: true
 pre: " <b> 5.2. </b> "
 ---
 
