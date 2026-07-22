@@ -40,3 +40,7 @@ Bài lab thực hành (Workshop) này hướng dẫn chi tiết từng bước c
 6. [5.6 Xử lý dữ liệu bất đồng bộ sau trận đấu](5.6-analytics-stream/)
    - 5.6.1 Kích hoạt DynamoDB Streams & IAM Roles
    - 5.6.2 Khởi tạo MatchAnalytic Lambda & Kiểm thử Log
+7. [5.7 Dọn dẹp tài nguyên](5.7-cleanup/)
+   - 5.7.1 Dọn dẹp Cognito & DynamoDB
+   - 5.7.2 Dọn dẹp Lambda & API Gateway
+   - 5.7.3 Dọn dẹp CloudFront & WAF

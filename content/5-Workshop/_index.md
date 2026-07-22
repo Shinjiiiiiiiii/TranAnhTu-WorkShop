@@ -40,3 +40,7 @@ This workshop provides a complete, step-by-step hands-on implementation guide fo
 6. [5.6 Asynchronous Post-Match Processing](5.6-analytics-stream/)
    - 5.6.1 Enable DynamoDB Streams & IAM Roles
    - 5.6.2 Create MatchAnalytic Lambda & Verify Logs
+7. [5.7 Resource Cleanup](5.7-cleanup/)
+   - 5.7.1 Clean Up Cognito & DynamoDB
+   - 5.7.2 Clean Up Lambda & API Gateway
+   - 5.7.3 Clean Up CloudFront & WAF
