@@ -58,6 +58,10 @@ This workshop provides a complete, step-by-step hands-on implementation guide fo
 6. [5.6 Asynchronous Post-Match Processing](5.6-analytics-stream/)
    - 5.6.1 Enable DynamoDB Streams & IAM Roles
    - 5.6.2 Create MatchAnalytic Lambda & Verify Logs
+7. [5.7 Resource Cleanup](5.7-cleanup/)
+   - 5.7.1 Clean Up Cognito & DynamoDB
+   - 5.7.2 Clean Up Lambda & API Gateway
+   - 5.7.3 Clean Up CloudFront & WAF
 """
 
 main_vi = """## Xây dựng Kiến trúc Backend Game Live-Service trên AWS
@@ -93,6 +97,10 @@ Bài lab thực hành (Workshop) này hướng dẫn chi tiết từng bước c
 6. [5.6 Xử lý dữ liệu bất đồng bộ sau trận đấu](5.6-analytics-stream/)
    - 5.6.1 Kích hoạt DynamoDB Streams & IAM Roles
    - 5.6.2 Khởi tạo MatchAnalytic Lambda & Kiểm thử Log
+7. [5.7 Dọn dẹp tài nguyên](5.7-cleanup/)
+   - 5.7.1 Dọn dẹp Cognito & DynamoDB
+   - 5.7.2 Dọn dẹp Lambda & API Gateway
+   - 5.7.3 Dọn dẹp CloudFront & WAF
 """
 
 write_page(os.path.join(workshop_dir, "_index.md"), "Workshop", 5, "5", main_en, always_open=True)
@@ -1037,4 +1045,201 @@ write_page(os.path.join(c562_dir, "_index.vi.md"), "Khởi tạo MatchAnalytic L
 ![Dữ liệu Event từ DynamoDB Stream](/images/5-Workshop/img_B/image40.png)
 """)
 
-print("Updated 5.x index files with Demo Web and Source Code links!")
+
+# --- CHAPTER 5.7: RESOURCE CLEANUP ---
+c57_dir = os.path.join(workshop_dir, "5.7-Cleanup")
+os.makedirs(c57_dir, exist_ok=True)
+
+write_page(os.path.join(c57_dir, "_index.md"), "Resource Cleanup", 7, "5.7",
+"""### Overview
+In this final chapter, you will clean up the AWS resources created during this workshop to prevent ongoing charges. Follow the step-by-step instructions for each service.
+
+---
+
+### Sub-modules
+- [5.7.1 Clean Up Cognito & DynamoDB](5.7.1-cleanup-cognito-dynamodb/)
+- [5.7.2 Clean Up Lambda & API Gateway](5.7.2-cleanup-lambda-apigateway/)
+- [5.7.3 Clean Up CloudFront & WAF](5.7.3-cleanup-cloudfront-waf/)
+""", always_open=True)
+
+write_page(os.path.join(c57_dir, "_index.vi.md"), "Dọn dẹp tài nguyên", 7, "5.7",
+"""### Tổng quan
+Trong chương cuối cùng này, bạn sẽ tiến hành dọn dẹp các tài nguyên AWS đã khởi tạo trong suốt bài thực hành để tránh phát sinh chi phí không mong muốn. Hãy thực hiện dọn dẹp lần lượt theo từng bước hướng dẫn.
+
+---
+
+### Các bài học nhỏ
+- [5.7.1 Dọn dẹp Cognito & DynamoDB](5.7.1-cleanup-cognito-dynamodb/)
+- [5.7.2 Dọn dẹp Lambda & API Gateway](5.7.2-cleanup-lambda-apigateway/)
+- [5.7.3 Dọn dẹp CloudFront & WAF](5.7.3-cleanup-cloudfront-waf/)
+""", always_open=True)
+
+# 5.7.1
+c571_dir = os.path.join(c57_dir, "5.7.1-cleanup-cognito-dynamodb")
+os.makedirs(c571_dir, exist_ok=True)
+write_page(os.path.join(c571_dir, "_index.md"), "Clean Up Cognito & DynamoDB", 1, "5.7.1",
+"""### Step-by-Step Implementation
+
+#### Step 1: Delete Cognito User Pool
+1. Go to the **Amazon Cognito** console -> **User pools**.
+2. Select the User pool you created and click **Delete**.
+3. Confirm deletion by typing the pool name.
+
+![Delete Cognito User Pool](/images/5-Workshop/img_C/image1.png)
+![Confirm Delete User Pool](/images/5-Workshop/img_C/image2.png)
+
+---
+
+#### Step 2: Delete Cognito Identity Pool
+1. Select **Identity pools** from the Cognito dashboard.
+2. Select the Identity pool you created and click **Delete**.
+3. Confirm the deletion.
+
+![Delete Cognito Identity Pool](/images/5-Workshop/img_C/image3.png)
+![Confirm Delete Identity Pool](/images/5-Workshop/img_C/image4.png)
+
+---
+
+#### Step 3: Delete DynamoDB Tables
+1. Go to the **Amazon DynamoDB** console -> **Tables**.
+2. Select all the tables you created (`MatchmakingQueue`, `ActiveMatches`).
+3. Click **Delete** and confirm.
+
+![Delete DynamoDB Tables](/images/5-Workshop/img_C/image5.png)
+![Confirm Delete Tables](/images/5-Workshop/img_C/image6.png)
+""")
+
+write_page(os.path.join(c571_dir, "_index.vi.md"), "Dọn dẹp Cognito & DynamoDB", 1, "5.7.1",
+"""### Các bước thực hiện
+
+#### Bước 1: Xóa Cognito User Pool
+1. Truy cập **Amazon Cognito** console -> **User pools**.
+2. Chọn User pool đã tạo và click **Delete**.
+3. Xác nhận xóa bằng cách nhập tên pool.
+
+![Xóa Cognito User Pool](/images/5-Workshop/img_C/image1.png)
+![Xác nhận xóa User Pool](/images/5-Workshop/img_C/image2.png)
+
+---
+
+#### Bước 2: Xóa Cognito Identity Pool
+1. Chọn **Identity pools** trên thanh điều hướng Cognito.
+2. Chọn Identity pool đã tạo và click **Delete**.
+3. Xác nhận hành động xóa.
+
+![Xóa Cognito Identity Pool](/images/5-Workshop/img_C/image3.png)
+![Xác nhận xóa Identity Pool](/images/5-Workshop/img_C/image4.png)
+
+---
+
+#### Bước 3: Xóa Bảng DynamoDB
+1. Truy cập **Amazon DynamoDB** console -> **Tables**.
+2. Chọn tất cả các bảng đã khởi tạo (`MatchmakingQueue`, `ActiveMatches`).
+3. Nhấp **Delete** và xác nhận.
+
+![Xóa Bảng DynamoDB](/images/5-Workshop/img_C/image5.png)
+![Xác nhận xóa Bảng](/images/5-Workshop/img_C/image6.png)
+""")
+
+# 5.7.2
+c572_dir = os.path.join(c57_dir, "5.7.2-cleanup-lambda-apigateway")
+os.makedirs(c572_dir, exist_ok=True)
+write_page(os.path.join(c572_dir, "_index.md"), "Clean Up Lambda & API Gateway", 2, "5.7.2",
+"""### Step-by-Step Implementation
+
+#### Step 1: Delete Lambda Functions
+1. Go to the **AWS Lambda** console -> **Functions**.
+2. Select the Lambda functions you created (`FightingGameMatchmaker`, `MatchAnalyticLambda`).
+3. Click **Actions** -> **Delete** and confirm.
+
+![Delete Lambda Functions](/images/5-Workshop/img_C/image7.png)
+![Confirm Delete Lambda Functions](/images/5-Workshop/img_C/image8.png)
+
+---
+
+#### Step 2: Delete API Gateway APIs
+1. Go to the **Amazon API Gateway** console.
+2. Select the API you created (`FightingGameAPI`).
+3. Click **Actions** -> **Delete** and confirm.
+
+![Delete API Gateway](/images/5-Workshop/img_C/image9.png)
+![Confirm Delete API](/images/5-Workshop/img_C/image10.png)
+""")
+
+write_page(os.path.join(c572_dir, "_index.vi.md"), "Dọn dẹp Lambda & API Gateway", 2, "5.7.2",
+"""### Các bước thực hiện
+
+#### Bước 1: Xóa các Lambda Function
+1. Truy cập **AWS Lambda** console -> **Functions**.
+2. Chọn các Function đã khởi tạo (`FightingGameMatchmaker`, `MatchAnalyticLambda`).
+3. Chọn **Actions** -> **Delete** và xác nhận xóa.
+
+![Xóa các Lambda Function](/images/5-Workshop/img_C/image7.png)
+![Xác nhận xóa Lambda Function](/images/5-Workshop/img_C/image8.png)
+
+---
+
+#### Bước 2: Xóa API Gateway
+1. Truy cập **Amazon API Gateway** console.
+2. Chọn API đã khởi tạo (`FightingGameAPI`).
+3. Chọn **Actions** -> **Delete** và xác nhận.
+
+![Xóa API Gateway](/images/5-Workshop/img_C/image9.png)
+![Xác nhận xóa API](/images/5-Workshop/img_C/image10.png)
+""")
+
+# 5.7.3
+c573_dir = os.path.join(c57_dir, "5.7.3-cleanup-cloudfront-waf")
+os.makedirs(c573_dir, exist_ok=True)
+write_page(os.path.join(c573_dir, "_index.md"), "Clean Up CloudFront & WAF", 3, "5.7.3",
+"""### Step-by-Step Implementation
+
+#### Step 1: Disable and Delete CloudFront Distribution
+1. Go to the **Amazon CloudFront** console -> **Distributions**.
+2. Select the Distribution you created -> Click **Disable**.
+3. Confirm and wait 5-10 minutes for status transition to completed.
+4. Select it again and click **Delete**.
+
+![Disable CloudFront Distribution](/images/5-Workshop/img_C/image11.png)
+![Confirm Disable Distribution](/images/5-Workshop/img_C/image12.png)
+![Delete CloudFront Distribution](/images/5-Workshop/img_C/image13.png)
+
+---
+
+#### Step 2: Disassociate and Delete WAF Web ACL
+1. Go to the **AWS WAF & Shield** console -> **Web ACLs**.
+2. Select your ACL (e.g. `CreatedByCloudFront-56a8180e`).
+3. Go to **Associated AWS resources** and disassociate the CloudFront distribution.
+4. Go back to Web ACLs list -> click **Delete**.
+
+![Manage Associated WAF Resources](/images/5-Workshop/img_C/image14.png)
+![Disassociate and Delete WAF ACL](/images/5-Workshop/img_C/image15.png)
+""")
+
+write_page(os.path.join(c573_dir, "_index.vi.md"), "Dọn dẹp CloudFront & WAF", 3, "5.7.3",
+"""### Các bước thực hiện
+
+#### Bước 1: Vô hiệu hóa và Xóa CloudFront Distribution
+1. Truy cập **Amazon CloudFront** console -> **Distributions**.
+2. Chọn Distribution đã khởi tạo -> Click **Disable**.
+3. Xác nhận và đợi 5-10 phút để quá trình vô hiệu hóa hoàn tất.
+4. Chọn lại Distribution đó và bấm **Delete** để xóa hẳn.
+
+![Vô hiệu hóa CloudFront Distribution](/images/5-Workshop/img_C/image11.png)
+![Xác nhận vô hiệu hóa](/images/5-Workshop/img_C/image12.png)
+![Xóa CloudFront Distribution](/images/5-Workshop/img_C/image13.png)
+
+---
+
+#### Bước 2: Gỡ liên kết và Xóa WAF Web ACL
+1. Truy cập **AWS WAF & Shield** console -> **Web ACLs**.
+2. Chọn Web ACL của bạn (ví dụ: `CreatedByCloudFront-56a8180e`).
+3. Chọn tab **Associated AWS resources** và gỡ liên kết (Disassociate) với CloudFront distribution.
+4. Quay lại danh sách Web ACLs -> Chọn ACL và bấm **Delete**.
+
+![Quản lý tài nguyên liên kết WAF](/images/5-Workshop/img_C/image14.png)
+![Gỡ liên kết và Xóa WAF ACL](/images/5-Workshop/img_C/image15.png)
+""")
+
+print("Updated 5.x index files with Demo Web and Source Code links and Chapter 5.7 Cleanup!")
+
